@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&display=swap');
+
+.fontSize-title {
+  font-size: $fontSize-title;
+  @include sm {
+    font-size: $fontSize-title-sm;
+  }
+}
+
+.fontSize-subtitle {
+  font-size: $fontSize-subtitle;
+  @include sm {
+    font-size: $fontSize-subtitle-sm;
+  }
+}
+
+.fontSize-paragraph {
+  font-size: $fontSize-paragraph;
+  @include sm {
+    font-size: $fontSize-paragraph-sm;
+  }
+}
+
+.fontSize-paragraph2 {
+  font-size: $fontSize-paragraph2;
+  @include sm {
+    font-size: $fontSize-paragraph2-sm;
+  }
+}
