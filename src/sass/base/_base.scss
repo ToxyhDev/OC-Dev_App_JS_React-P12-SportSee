@@ -9,6 +9,9 @@
 
 html {
   font-size: 100%;
+  @include md {
+    font-size: 70%;
+  }
   @include sm {
     font-size: 50%;
   }
@@ -61,11 +64,11 @@ button {
   background-color: transparent;
 }
 
-svg {
-  max-width: 100%;
-  max-height: 100%;
-  object-fit: cover;
-}
+// svg {
+//   max-width: 100%;
+//   max-height: 100%;
+//   object-fit: cover;
+// }
 figure {
   margin: 0;
 }
@@ -80,20 +83,22 @@ figure {
   position: absolute;
   width: 1px;
 }
-
+#root {
+  height: 100vh;
+}
 .body-container {
   display: flex;
   flex-direction: column;
-  gap: 2.69rem;
+  // gap: 2.69rem;
   width: 100%;
   box-sizing: border-box;
-  min-height: 90vh;
+  height: 100%;
 
   // border: 1px solid red;
-  padding: 45px 100px 50px 100px;
-  @include sm {
-    padding: 20px;
-  }
+  // padding: 45px 100px 50px 100px;
+  // @include sm {
+  //   padding: 20px;
+  // }
 }
 
 /* clears the ‘X’ from Internet Explorer */

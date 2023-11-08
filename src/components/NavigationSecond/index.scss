@@ -1,0 +1,50 @@
+.navSecond {
+  background-color: $color-surface-dim;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0 1.6rem 3.69rem;
+  position: relative;
+
+  @include md {
+    padding: 1.5rem 1rem;
+    flex-direction: row;
+    justify-content: space-between;
+    height: min-content;
+  }
+}
+.nav-second {
+  margin: auto;
+  @include md {
+    margin: 0;
+  }
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+
+    @include md {
+      flex-direction: row;
+    }
+  }
+}
+.copyright {
+  color: $color-secondary;
+  font-size: 12px;
+  //   width: 200px;
+  //   position: absolute;
+  //   bottom: 30%;
+  //   transform-origin: center;
+  //   transform: rotate(-90deg) translate(-50%);
+  margin-top: auto;
+  writing-mode: vertical-rl;
+  transform: scale(-1, -1);
+
+  @include md {
+    margin: 0;
+    transform: none;
+    writing-mode: unset;
+  }
+}

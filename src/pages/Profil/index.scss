@@ -1,0 +1,30 @@
+.page {
+  &__main-container {
+    height: 100%;
+    display: flex;
+
+    @include md {
+      flex-direction: column-reverse;
+    }
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 60px 100px 90px;
+
+    @include md {
+      padding: 32px 16px;
+    }
+  }
+
+  &__header {
+    &--title {
+      color: #000;
+      & span {
+        color: $color-primary;
+      }
+    }
+  }
+}
