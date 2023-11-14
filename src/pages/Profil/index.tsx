@@ -38,11 +38,17 @@ export default function Profil() {
               <div className="profil__content">
                 <div className="profil__charts">
                   <ChartActivity userId={id} />
-                  <div className="profil__charts--squares">
-                    <ChartSessions userId={id} />
-                    <ChartPerformance userId={id} />
-                    <ChartScore score={userData.todayScore} />
-                  </div>
+                  <ul className="profil__charts--squares">
+                    <li className="profil__charts--element">
+                      <ChartSessions userId={id} />
+                    </li>
+                    <li className="profil__charts--element">
+                      <ChartPerformance userId={id} />
+                    </li>
+                    <li className="profil__charts--element">
+                      <ChartScore score={userData.todayScore} />
+                    </li>
+                  </ul>
                 </div>
                 <ul className="profil__indicators">
                   <li className="profil__indicator">
