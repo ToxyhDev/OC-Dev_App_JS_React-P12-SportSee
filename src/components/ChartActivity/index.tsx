@@ -1,5 +1,4 @@
 import './index.scss'
-// import PropTypes from 'prop-types'
 import GetUserActivity from '../../api/GetUserActivity'
 import { Post } from '../../api/GetUserActivity'
 import {
@@ -13,21 +12,14 @@ import {
   ResponsiveContainer,
 } from 'recharts'
 
-// ChartActivity.propTypes = {
-//   userId: PropTypes.string.isRequired,
-// }
-
 interface ChartActivityProps {
   userId?: string
 }
 
 export default function ChartActivity({ userId }: ChartActivityProps) {
-  // export default function ChartActivity({ userId }) {
   const userData: Post | string = userId
     ? GetUserActivity(userId)
     : 'Chargement...'
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
-  // const userData = userId ? GetUserActivity(userId) : 'Chargement...'
 
   // --> Gérer le cas où userData est une chaîne de caractères
   if (typeof userData === 'string') {
@@ -49,6 +41,30 @@ export default function ChartActivity({ userId }: ChartActivityProps) {
         {text}
       </span>
     )
+  }
+
+  interface CustomToolTipProps {
+    active?: boolean
+    payload?: Payload[]
+  }
+  interface Payload {
+    value: number
+    unit: string
+  }
+
+  const CustomTooltip = ({ active, payload }: CustomToolTipProps) => {
+    if (active && payload) {
+      return (
+        <div
+          style={{ backgroundColor: '#E60000', color: '#fff', padding: '8px' }}
+        >
+          <p className="label">{`${payload[0].value} ${payload[0].unit}`}</p>
+          <p className="label">{`${payload[1].value} ${payload[1].unit}`}</p>
+        </div>
+      )
+    }
+
+    return null
   }
 
   return (
@@ -86,7 +102,8 @@ export default function ChartActivity({ userId }: ChartActivityProps) {
                 color: 'white',
               }}
               labelStyle={{ display: 'none' }}
-              formatter={(value, _name, unit) => [value, unit]}
+              // formatter={(value, _name, unit) => [value, unit]}
+              content={<CustomTooltip />}
             />
 
             <Legend

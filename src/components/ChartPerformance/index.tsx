@@ -1,5 +1,4 @@
 import './index.scss'
-// import PropTypes from 'prop-types'
 import GetUserPerformance from '../../api/GetUserPerformance'
 import { Post } from '../../api/GetUserPerformance'
 import {
@@ -9,10 +8,6 @@ import {
   PolarAngleAxis,
   ResponsiveContainer,
 } from 'recharts'
-
-// ChartActivity.propTypes = {
-//   userId: PropTypes.string.isRequired,
-// }
 
 interface ChartPerformanceProps {
   userId?: string

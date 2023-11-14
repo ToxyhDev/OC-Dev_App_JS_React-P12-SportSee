@@ -5,11 +5,6 @@ import {
   ResponsiveContainer,
   PolarAngleAxis,
 } from 'recharts'
-// import PropTypes from 'prop-types'
-
-// ChartActivity.propTypes = {
-//   userId: PropTypes.string.isRequired,
-// }
 
 interface ChartScoreProps {
   score?: number
@@ -39,7 +34,6 @@ export default function ChartScore({ score }: ChartScoreProps) {
   ]
 
   // ==> Data chargée
-  console.log(userData * 100)
 
   return (
     <>

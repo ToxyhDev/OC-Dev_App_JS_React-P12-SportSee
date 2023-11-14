@@ -11,7 +11,7 @@ export interface Post {
   userId: number
   sessions: Sessions[]
 }
-interface Sessions {
+export interface Sessions {
   day: string
   kilogram: number
   calories: number
