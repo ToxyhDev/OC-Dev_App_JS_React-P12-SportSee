@@ -46,7 +46,9 @@ export default function Profil() {
                       <ChartPerformance userId={id} />
                     </li>
                     <li className="profil__charts--element">
-                      <ChartScore score={userData.todayScore} />
+                      <ChartScore
+                        score={userData.todayScore ?? userData.score}
+                      />
                     </li>
                   </ul>
                 </div>

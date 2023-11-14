@@ -17,6 +17,7 @@ export interface Post {
     lipidCount: number
   }
   todayScore: number
+  score: number
   userInfos: {
     firstName: string
     lastName: string
