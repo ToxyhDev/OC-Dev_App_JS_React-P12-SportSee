@@ -3,8 +3,6 @@ import { useEffect, useState } from 'react'
 import { USER_ACTIVITY as mockData } from '../utils/mocks/mockData'
 import { apiDisconnected } from './GetUserAllData'
 
-// const apiDisconnected = false
-
 interface DataPost {
   data: Post
 }
@@ -17,6 +15,12 @@ export interface Sessions {
   kilogram: number
   calories: number
 }
+
+/**
+ *
+ * @param {number} userId
+ * @returns {Post | string}  Data corresponds to the user ID
+ */
 
 export default function GetUserActivity(userId: string): Post | string {
   const baseURL = `http://localhost:3000/user/${userId}/activity`

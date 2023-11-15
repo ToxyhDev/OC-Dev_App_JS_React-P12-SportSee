@@ -18,19 +18,17 @@ interface IData {
 }
 
 export default function ChartPerformance({ userId }: ChartPerformanceProps) {
-  // export default function ChartActivity({ userId }) {
   const userData: Post | string = userId
     ? GetUserPerformance(userId)
     : 'Chargement...'
 
-  // --> Gérer le cas où userData est une chaîne de caractères
+  // --> Handle the case where userData is a string
   if (typeof userData === 'string') {
     return <div>{userData}</div>
   }
 
-  // ==> Data chargée
-
-  // console.log(userData)
+  // ==> Data loaded
+  // -> Translate kinds
   const listKind: string[] = [
     'Cardio',
     'Énergie',
@@ -39,7 +37,7 @@ export default function ChartPerformance({ userId }: ChartPerformanceProps) {
     'Vitesse',
     'Intensité',
   ]
-
+  // -> Formatting data for chart
   const data: IData[] = userData.data.map((element) => ({
     kind: listKind[element.kind - 1],
     value: element.value,

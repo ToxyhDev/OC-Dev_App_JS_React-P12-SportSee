@@ -3,8 +3,6 @@ import { useEffect, useState } from 'react'
 import { USER_AVERAGE_SESSIONS as mockData } from '../utils/mocks/mockData'
 import { apiDisconnected } from './GetUserAllData'
 
-// const apiDisconnected = false
-
 interface DataPost {
   data: Post
 }
@@ -16,7 +14,11 @@ interface Sessions {
   day: number
   sessionLength: number
 }
-
+/**
+ *
+ * @param {number} userId
+ * @returns {Post | string}  Data corresponds to the user ID
+ */
 export default function GetUserSessions(userId: string): Post | string {
   const baseURL = `http://localhost:3000/user/${userId}/average-sessions`
 

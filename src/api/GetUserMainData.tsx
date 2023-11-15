@@ -3,8 +3,6 @@ import { useEffect, useState } from 'react'
 import { USER_MAIN_DATA as mockData } from '../utils/mocks/mockData'
 import { apiDisconnected } from './GetUserAllData'
 
-// const apiDisconnected = false
-
 interface DataPost {
   data: Post
 }
@@ -25,7 +23,11 @@ export interface Post {
     age: number
   }
 }
-
+/**
+ *
+ * @param {number} userId
+ * @returns {Post | string}  Data corresponds to the user ID
+ */
 export default function GetUserMainData(userId: string): Post | string {
   const baseURL = `http://localhost:3000/user/${userId}`
 

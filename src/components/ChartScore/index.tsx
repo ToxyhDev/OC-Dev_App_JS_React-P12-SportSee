@@ -17,23 +17,23 @@ interface IData {
 }
 
 export default function ChartScore({ score }: ChartScoreProps) {
-  // export default function ChartActivity({ userId }) {
   const userData: number | string = score ? score : 'Chargement...'
 
-  // --> Gérer le cas où userData est une chaîne de caractères
+  // --> Handle the case where userData is a string
   if (typeof userData === 'string') {
     return <div>{userData}</div>
   }
 
+  // ==> Data loaded
+
+  // -> Formatting data for chart
   const data: IData[] = [
     {
       name: 'score',
-      value: userData * 100,
+      value: userData * 100, //Convert in %
       fill: '#f00',
     },
   ]
-
-  // ==> Data chargée
 
   return (
     <>
@@ -43,19 +43,12 @@ export default function ChartScore({ score }: ChartScoreProps) {
           <RadialBarChart
             cx="50%"
             cy="50%"
-            innerRadius="60%" //60
+            innerRadius="60%"
             barSize={10}
             data={data}
             startAngle={90}
             endAngle={450}
-            // margin={{
-            //   top: 24,
-            //   right: 24,
-            //   left: 24,
-            //   bottom: 24,
-            // }}
           >
-            {/* r='80' */}
             <circle r="85" cx="50%" cy="50%" fill="white" />
             <PolarAngleAxis type="number" domain={[0, 100]} tick={false} />
             <RadialBar dataKey="value" cornerRadius={30} />

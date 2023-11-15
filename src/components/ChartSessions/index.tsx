@@ -14,6 +14,13 @@ import {
 interface ChartSessionsProps {
   userId?: string
 }
+interface PointsProps {
+  x: number
+  y: number
+}
+interface CustomCursorProps {
+  points?: PointsProps[]
+}
 
 export default function ChartSessions({ userId }: ChartSessionsProps) {
   // export default function ChartActivity({ userId }) {
@@ -21,39 +28,30 @@ export default function ChartSessions({ userId }: ChartSessionsProps) {
     ? GetUserSessions(userId)
     : 'Chargement...'
 
-  // --> Gérer le cas où userData est une chaîne de caractères
+  // --> Handle the case where userData is a string
   if (typeof userData === 'string') {
     return <div>{userData}</div>
   }
 
-  // ==> Data chargée
-  const week = ['L', 'M', 'M', 'J', 'V', 'S', 'D']
+  // ==> Data loaded
 
-  // Mapper les données pour obtenir les jours de la semaine
+  // -> Map data to get days of the week
+  const week = ['L', 'M', 'M', 'J', 'V', 'S', 'D']
   const dataWithDaysOfWeek = userData.sessions.map((session) => ({
     ...session,
     dayOfWeek: week[session.day - 1],
   }))
 
-  // Ajouter un point à gauche
+  // => continuous line design
+  // -> Dummy point on the left
   const leftPoint = { day: 0, sessionLength: 30 }
-  // Ajouter un point à droite
+  // -> Dummy point on the right
   const rightPoint = { day: 8, sessionLength: 70 }
 
-  // Concaténer les points ajoutés avec les sessions existantes
   const extendedSessions = [leftPoint, ...dataWithDaysOfWeek, rightPoint]
 
-  interface PointsProps {
-    x: number
-    y: number
-  }
-
-  interface CustomCursorProps {
-    points?: PointsProps[]
-  }
-
+  // => Custom cursor during the chart hover
   function CustomCursor({ points }: CustomCursorProps) {
-    // console.log(points)
     if (!points || points.length === 0) {
       return null
     }

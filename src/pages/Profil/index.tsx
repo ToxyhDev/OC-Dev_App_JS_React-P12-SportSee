@@ -15,7 +15,7 @@ import ChartScore from '../../components/ChartScore'
 export default function Profil() {
   const { id } = useParams<string>()
   const userData: Post | string = id ? GetUserMainData(id) : 'Chargement...'
-  // console.log(Object.keys(userData.keyData).length)
+
   return (
     <>
       {typeof userData === 'string' ? (

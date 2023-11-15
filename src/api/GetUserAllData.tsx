@@ -24,6 +24,11 @@ export interface Post {
   }
 }
 
+/**
+ * Post[] if data load else return loading message
+ * @returns {Post[] | string}
+ */
+
 export default function GetUserAllData(): Post[] | string {
   const baseURL = `http://localhost:3000/users`
 

@@ -1,11 +1,9 @@
 import './index.scss'
-// import { useParams } from 'react-router-dom'
 import GetUserAllData from '../../api/GetUserAllData'
 import { Post } from '../../api/GetUserAllData'
 import { Link } from 'react-router-dom'
 
 export default function Home() {
-  // const { id } = useParams<string>()
   const userData: Post[] | string = GetUserAllData()
   console.log(userData)
   return (

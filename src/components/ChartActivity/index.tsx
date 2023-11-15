@@ -16,18 +16,26 @@ interface ChartActivityProps {
   userId?: string
 }
 
+interface CustomToolTipProps {
+  active?: boolean //Tooltip is active or not
+  payload?: Payload[] // Data of tooltip
+}
+interface Payload {
+  value: number
+  unit: string
+}
+
 export default function ChartActivity({ userId }: ChartActivityProps) {
   const userData: Post | string = userId
     ? GetUserActivity(userId)
     : 'Chargement...'
 
-  // --> Gérer le cas où userData est une chaîne de caractères
+  // --> Handle the case where userData is a string
   if (typeof userData === 'string') {
     return <div>{userData}</div>
   }
 
-  // ==> Data chargée
-
+  // ==> Data loaded
   const renderLegend = (text: string) => {
     return (
       <span
@@ -41,15 +49,6 @@ export default function ChartActivity({ userId }: ChartActivityProps) {
         {text}
       </span>
     )
-  }
-
-  interface CustomToolTipProps {
-    active?: boolean
-    payload?: Payload[]
-  }
-  interface Payload {
-    value: number
-    unit: string
   }
 
   const CustomTooltip = ({ active, payload }: CustomToolTipProps) => {
@@ -72,16 +71,7 @@ export default function ChartActivity({ userId }: ChartActivityProps) {
       <div className="chartActivity">
         <h3 className="chartActivity__title">Activité quotidienne</h3>
         <ResponsiveContainer width="100%" height="100%">
-          <BarChart
-            // margin={{
-            //   top: 24,
-            //   right: 32,
-            //   left: 32,
-            //   bottom: 24,
-            // }}
-            data={userData.sessions}
-            barSize={8}
-          >
+          <BarChart data={userData.sessions} barSize={8}>
             <CartesianGrid vertical={false} strokeDasharray="2 2" />
 
             <XAxis
@@ -108,7 +98,6 @@ export default function ChartActivity({ userId }: ChartActivityProps) {
             />
             <Tooltip
               labelStyle={{ display: 'none' }}
-              // formatter={(value, _name, unit) => [value, unit]}
               content={<CustomTooltip />}
             />
 
