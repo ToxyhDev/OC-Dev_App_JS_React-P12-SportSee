@@ -24,7 +24,7 @@ const router = createBrowserRouter(
     },
   ],
   {
-    basename: '/',
+    basename: '/projets/12-sportsee',
   }
 )
 
