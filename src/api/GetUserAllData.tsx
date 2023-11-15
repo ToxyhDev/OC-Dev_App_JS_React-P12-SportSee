@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react'
 import { USER_MAIN_DATA as mockData } from '../utils/mocks/mockData'
 
 export const apiDisconnected = true
+
 interface DataPost {
   data: Post[]
 }

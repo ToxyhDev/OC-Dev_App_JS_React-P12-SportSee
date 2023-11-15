@@ -1,64 +1,84 @@
-# Projet 12 - Développer un tableau de bord d'analytics avec React
-
 ![Vite](https://img.shields.io/badge/vite-%23646CFF.svg?style=for-the-badge&logo=vite&logoColor=white)
 ![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)
 ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
 ![React Router](https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white)
 ![SASS](https://img.shields.io/badge/SASS-hotpink.svg?style=for-the-badge&logo=SASS&logoColor=white)
-![Docker](https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white)
+![ESLint](https://img.shields.io/badge/ESLint-4B3263?style=for-the-badge&logo=eslint&logoColor=white)
+[![forthebadge](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMTguMTI1MDQ1Nzc2MzY3MiIgaGVpZ2h0PSIzNSIgdmlld0JveD0iMCAwIDIxOC4xMjUwNDU3NzYzNjcyIDM1Ij48cmVjdCB3aWR0aD0iMTEyLjM1OTM5Nzg4ODE4MzYiIGhlaWdodD0iMzUiIGZpbGw9IiMzMUM0RjMiLz48cmVjdCB4PSIxMTIuMzU5Mzk3ODg4MTgzNiIgd2lkdGg9IjEwNS43NjU2NDc4ODgxODM2IiBoZWlnaHQ9IjM1IiBmaWxsPSIjMzg5QUQ1Ii8+PHRleHQgeD0iNTYuMTc5Njk4OTQ0MDkxOCIgeT0iMTcuNSIgZm9udC1zaXplPSIxMiIgZm9udC1mYW1pbHk9IidSb2JvdG8nLCBzYW5zLXNlcmlmIiBmaWxsPSIjRkZGRkZGIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBhbGlnbm1lbnQtYmFzZWxpbmU9Im1pZGRsZSIgbGV0dGVyLXNwYWNpbmc9IjIiPkdSQVBIIFdJVEg8L3RleHQ+PHRleHQgeD0iMTY1LjI0MjIyMTgzMjI3NTQiIHk9IjE3LjUiIGZvbnQtc2l6ZT0iMTIiIGZvbnQtZmFtaWx5PSInTW9udHNlcnJhdCcsIHNhbnMtc2VyaWYiIGZpbGw9IiNGRkZGRkYiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtd2VpZ2h0PSI5MDAiIGFsaWdubWVudC1iYXNlbGluZT0ibWlkZGxlIiBsZXR0ZXItc3BhY2luZz0iMiI+UkVDSEFSVFM8L3RleHQ+PC9zdmc+)]
 
----
+# Projet 12 - Develop an analytics dashboard with React
 
-## 💻 [Repo Github](https://github.com/ToxyhDev/OC-Dev_App_JS_React-P12-SportSee)
+Here you will find **project 12** of the **“JavaScript/React application developer”** training. The objective of this project is to create a web application which allows you to display its performances which are received from a REST API.
 
-## 🚀 Démarer le projet
+## Table of Contents
 
-Pour démarer le backend:
+- [🛠️ Project](#🛠️-project)
+  - [Prerequisites](#prerequisites)
+  - [Starting the project](#starting-the-project)
+  - [Build the project](#build-the-project)
+- [🔩 List of Dependencies](#🔩-list-of-dependencies)
+- [🚧 Setting up ESlint for this project](#🚧-setting-up-eslint-for-this-project)
+- [🔗 List of endpoints](#🔗-list-of-endpoints)
+
+## 🛠️ Project
+
+### Prerequisites
+
+You can fork the Back-End part with the REST API on this [github repository](https://github.com/OpenClassrooms-Student-Center/P9-front-end-dashboard).
+
+> [!TIP]
+> For installation, do not use Docker
+
+> [!NOTE]  
+> It is not mandatory to use the API to run this project. A mock of the data is available.
+>
+> ```tsx
+> // src/api/GetUserAllData.tsx
+> export const apiDisconnected = true //mock used
+> export const apiDisconnected = false //mock not used
+> ```
+
+### Starting the project
+
+1. Fork this repo
+
+2. Use this command to start the project:
 
 ```shell
 # With NPM:
 npm run dev
 ```
 
-> **Warning**
->
-> **Impossible d'utiliser Docker et les commandes yarn**
+### Build the project
 
-Utilisation de **vite-plugin-svgr** pour la gestion des SVG. [Link npm](https://www.npmjs.com/package/vite-plugin-svgr)
-Dans tsconfig.json ajouter la ligne "types":
+> [!IMPORTANT]  
+> Before building the project, remember to modify **base in vite.config.js** and **basename in main.tsx**.
+
+Use this command to build the project:
+
+```shell
+# With NPM:
+npm run build
+```
+
+### 🔩 List of Dependencies
+
+Use of **vite-plugin-svgr** for managing SVGs. [Link npm](https://www.npmjs.com/package/vite-plugin-svgr)
+In tsconfig.json I added the "types" line:
 
 ```json
 "compilerOptions":
 {
-    [...]
     "types": ["vite-plugin-svgr/client"]
 },
 ```
 
-Utilisation de Recharts pour les graphiques. [Link npm](https://www.npmjs.com/package/recharts)
+Using **Recharts** for charts. [Link npm](https://www.npmjs.com/package/recharts)
 
-## ⏳ Timing
+## 🚧 Setting up ESlint for this project
 
-**Date début :** 06/11/23
-
-**Date de fin :** 17/11/23
-
-### **Date de fin réel : **
-
-## 📑 Etapes :
-
-- [x] **Étape n° 1 :** Initialiser le projet
-- [ ] **Étape n° 2 :** Apprendre
-- [ ] **Étape n° 3 :** Créer le mock des données
-- [ ] **Étape n° 4 :** Créer la page tableau de bord **sans graphiques**
-- [ ] **Étape n° 5 :** Créer la page tableau de bord **avec graphiques**
-- [ ] **Étape n° 6 :** Connecter l'API au tableau de bord
-- [ ] **Étape n° 7 :** Ecrire la documentation
-- [ ] **Étape n° 8 :** Finaliser le projet
-
----
-
-## Configuration d'ESlint pour ce projet
+> [!IMPORTANT]  
+> The information in this part is for information purposes only, the configuration is already applied.
 
 If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
 
@@ -77,11 +97,7 @@ If you are developing a production application, we recommend updating the config
 - Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
 - Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
 
----
-
-## Partie Back-End
-
-### Possible endpoints
+## 🔗 List of endpoints
 
 This project includes four endpoints that you will be able to use:
 
