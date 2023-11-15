@@ -4,7 +4,7 @@
 ![React Router](https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white)
 ![SASS](https://img.shields.io/badge/SASS-hotpink.svg?style=for-the-badge&logo=SASS&logoColor=white)
 ![ESLint](https://img.shields.io/badge/ESLint-4B3263?style=for-the-badge&logo=eslint&logoColor=white)
-![Static Badge](https://img.shields.io/badge/Charts_with-Recharts-blue)
+![Recharts](https://img.shields.io/badge/recharts-%2324C8DB.svg?style=for-the-badge&&logoColor=%23FFFFFF)
 
 # Projet 12 - Develop an analytics dashboard with React
 
