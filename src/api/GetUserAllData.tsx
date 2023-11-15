@@ -2,8 +2,7 @@ import axios from 'axios'
 import { useEffect, useState } from 'react'
 import { USER_MAIN_DATA as mockData } from '../utils/mocks/mockData'
 
-const apiDisconnected = false
-
+export const apiDisconnected = true
 interface DataPost {
   data: Post[]
 }
