@@ -20,7 +20,7 @@ export default function Profil() {
     <>
       {typeof userData === 'string' ? (
         <h2>
-          Bonjour <span>{userData}</span>
+          <span>{userData}</span>
         </h2>
       ) : (
         <>
@@ -54,30 +54,33 @@ export default function Profil() {
                 </div>
                 <ul className="profil__indicators">
                   <li className="profil__indicator">
-                    <IconCalories width={100} />
+                    <IconCalories />
                     <p className="profil__indicator--p fontSize-paragraph3">
                       <span className="profil__indicator--span fontSize-paragraph">{`${userData.keyData.calorieCount}kcal`}</span>{' '}
-                      Calories
+                      <br /> Calories
                     </p>
                   </li>
                   <li className="profil__indicator">
-                    <IconProtein width={100} />
+                    <IconProtein />
                     <p className="profil__indicator--p fontSize-paragraph3">
                       <span className="profil__indicator--span fontSize-paragraph">{`${userData.keyData.proteinCount}g`}</span>{' '}
+                      <br />
                       Proteines
                     </p>
                   </li>
                   <li className="profil__indicator">
-                    <IconCarbs width={100} />
+                    <IconCarbs />
                     <p className="profil__indicator--p fontSize-paragraph3">
                       <span className="profil__indicator--span fontSize-paragraph">{`${userData.keyData.carbohydrateCount}g`}</span>{' '}
+                      <br />
                       Glucides
                     </p>
                   </li>
                   <li className="profil__indicator">
-                    <IconFat width={100} />
+                    <IconFat />
                     <p className="profil__indicator--p fontSize-paragraph3">
                       <span className="profil__indicator--span fontSize-paragraph">{`${userData.keyData.lipidCount}g`}</span>{' '}
+                      <br />
                       Lipides
                     </p>
                   </li>

@@ -31,13 +31,19 @@ export default function ChartPerformance({ userId }: ChartPerformanceProps) {
   // ==> Data chargée
 
   // console.log(userData)
+  const listKind: string[] = [
+    'Cardio',
+    'Énergie',
+    'Endurance',
+    'Force',
+    'Vitesse',
+    'Intensité',
+  ]
 
   const data: IData[] = userData.data.map((element) => ({
-    kind: Object.values(userData.kind)[element.kind - 1],
+    kind: listKind[element.kind - 1],
     value: element.value,
   }))
-
-  // console.log(data)
 
   return (
     <>
