@@ -4,7 +4,6 @@
 ![React Router](https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white)
 ![SASS](https://img.shields.io/badge/SASS-hotpink.svg?style=for-the-badge&logo=SASS&logoColor=white)
 ![ESLint](https://img.shields.io/badge/ESLint-4B3263?style=for-the-badge&logo=eslint&logoColor=white)
-[![forthebadge](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMTguMTI1MDQ1Nzc2MzY3MiIgaGVpZ2h0PSIzNSIgdmlld0JveD0iMCAwIDIxOC4xMjUwNDU3NzYzNjcyIDM1Ij48cmVjdCB3aWR0aD0iMTEyLjM1OTM5Nzg4ODE4MzYiIGhlaWdodD0iMzUiIGZpbGw9IiMzMUM0RjMiLz48cmVjdCB4PSIxMTIuMzU5Mzk3ODg4MTgzNiIgd2lkdGg9IjEwNS43NjU2NDc4ODgxODM2IiBoZWlnaHQ9IjM1IiBmaWxsPSIjMzg5QUQ1Ii8+PHRleHQgeD0iNTYuMTc5Njk4OTQ0MDkxOCIgeT0iMTcuNSIgZm9udC1zaXplPSIxMiIgZm9udC1mYW1pbHk9IidSb2JvdG8nLCBzYW5zLXNlcmlmIiBmaWxsPSIjRkZGRkZGIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBhbGlnbm1lbnQtYmFzZWxpbmU9Im1pZGRsZSIgbGV0dGVyLXNwYWNpbmc9IjIiPkdSQVBIIFdJVEg8L3RleHQ+PHRleHQgeD0iMTY1LjI0MjIyMTgzMjI3NTQiIHk9IjE3LjUiIGZvbnQtc2l6ZT0iMTIiIGZvbnQtZmFtaWx5PSInTW9udHNlcnJhdCcsIHNhbnMtc2VyaWYiIGZpbGw9IiNGRkZGRkYiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtd2VpZ2h0PSI5MDAiIGFsaWdubWVudC1iYXNlbGluZT0ibWlkZGxlIiBsZXR0ZXItc3BhY2luZz0iMiI+UkVDSEFSVFM8L3RleHQ+PC9zdmc+)]
 
 # Projet 12 - Develop an analytics dashboard with React
 
@@ -12,17 +11,17 @@ Here you will find **project 12** of the **“JavaScript/React application devel
 
 ## Table of Contents
 
-- [🛠️ Project](#🛠️-project)
-  - [Prerequisites](#prerequisites)
-  - [Starting the project](#starting-the-project)
-  - [Build the project](#build-the-project)
-- [🔩 List of Dependencies](#🔩-list-of-dependencies)
-- [🚧 Setting up ESlint for this project](#🚧-setting-up-eslint-for-this-project)
-- [🔗 List of endpoints](#🔗-list-of-endpoints)
+- [🛠️ Project](#%EF%B8%8F-project)
+  - [Prerequisites](#1-prerequisites)
+  - [Starting the project](#2-starting-the-project)
+  - [Build the project](#3-build-the-project)
+- [🔩 List of Dependencies](#-list-of-dependencies)
+- [🚧 Setting up ESlint for this project](#-setting-up-eslint-for-this-project)
+- [🔗 List of endpoints](#-list-of-endpoints)
 
 ## 🛠️ Project
 
-### Prerequisites
+### 1. Prerequisites
 
 You can fork the Back-End part with the REST API on this [github repository](https://github.com/OpenClassrooms-Student-Center/P9-front-end-dashboard).
 
@@ -32,13 +31,13 @@ You can fork the Back-End part with the REST API on this [github repository](htt
 > [!NOTE]  
 > It is not mandatory to use the API to run this project. A mock of the data is available.
 >
-> ```tsx
+> ```js
 > // src/api/GetUserAllData.tsx
 > export const apiDisconnected = true //mock used
 > export const apiDisconnected = false //mock not used
 > ```
 
-### Starting the project
+### 2. Starting the project
 
 1. Fork this repo
 
@@ -49,7 +48,7 @@ You can fork the Back-End part with the REST API on this [github repository](htt
 npm run dev
 ```
 
-### Build the project
+### 3. Build the project
 
 > [!IMPORTANT]  
 > Before building the project, remember to modify **base in vite.config.js** and **basename in main.tsx**.
@@ -63,8 +62,8 @@ npm run build
 
 ### 🔩 List of Dependencies
 
-Use of **vite-plugin-svgr** for managing SVGs. [Link npm](https://www.npmjs.com/package/vite-plugin-svgr)
-In tsconfig.json I added the "types" line:
+- Use of **vite-plugin-svgr** for managing SVGs. [Link npm](https://www.npmjs.com/package/vite-plugin-svgr)
+  In tsconfig.json I added the "types" line:
 
 ```json
 "compilerOptions":
@@ -73,7 +72,7 @@ In tsconfig.json I added the "types" line:
 },
 ```
 
-Using **Recharts** for charts. [Link npm](https://www.npmjs.com/package/recharts)
+- Using **Recharts** for charts. [Link npm](https://www.npmjs.com/package/recharts)
 
 ## 🚧 Setting up ESlint for this project
 
