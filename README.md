@@ -4,7 +4,7 @@
 ![React Router](https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white)
 ![SASS](https://img.shields.io/badge/SASS-hotpink.svg?style=for-the-badge&logo=SASS&logoColor=white)
 ![ESLint](https://img.shields.io/badge/ESLint-4B3263?style=for-the-badge&logo=eslint&logoColor=white)
-[![forthebadge](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMjYuMzU5Mzk3ODg4MTgzNiIgaGVpZ2h0PSIzNSIgdmlld0JveD0iMCAwIDIyNi4zNTkzOTc4ODgxODM2IDM1Ij48cmVjdCB3aWR0aD0iMTIwLjU5Mzc2NTI1ODc4OTA2IiBoZWlnaHQ9IjM1IiBmaWxsPSIjMzFDNEYzIi8+PHJlY3QgeD0iMTIwLjU5Mzc2NTI1ODc4OTA2IiB3aWR0aD0iMTA1Ljc2NTYzMjYyOTM5NDUzIiBoZWlnaHQ9IjM1IiBmaWxsPSIjMzg5QUQ1Ii8+PHRleHQgeD0iNjAuMjk2ODgyNjI5Mzk0NTMiIHk9IjE3LjUiIGZvbnQtc2l6ZT0iMTIiIGZvbnQtZmFtaWx5PSInUm9ib3RvJywgc2Fucy1zZXJpZiIgZmlsbD0iI0ZGRkZGRiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgYWxpZ25tZW50LWJhc2VsaW5lPSJtaWRkbGUiIGxldHRlci1zcGFjaW5nPSIyIj5DSEFSVFMgV0lUSDwvdGV4dD48dGV4dCB4PSIxNzMuNDc2NTgxNTczNDg2MzMiIHk9IjE3LjUiIGZvbnQtc2l6ZT0iMTIiIGZvbnQtZmFtaWx5PSInTW9udHNlcnJhdCcsIHNhbnMtc2VyaWYiIGZpbGw9IiNGRkZGRkYiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtd2VpZ2h0PSI5MDAiIGFsaWdubWVudC1iYXNlbGluZT0ibWlkZGxlIiBsZXR0ZXItc3BhY2luZz0iMiI+UkVDSEFSVFM8L3RleHQ+PC9zdmc+)](https://forthebadge.com)
+![Static Badge](https://img.shields.io/badge/Charts_with-Recharts-blue)
 
 # Projet 12 - Develop an analytics dashboard with React
 
