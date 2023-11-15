@@ -5,9 +5,17 @@
   display: flex;
   align-items: center;
   //   border: 1px solid red;
-  &__element .active {
-    color: $color-primary;
-    text-decoration: underline;
+  &__element {
+    &.active {
+      color: $color-primary;
+      text-decoration: underline;
+    }
+    @include lg {
+      display: none;
+      &:nth-child(1) {
+        display: block;
+      }
+    }
   }
   &__list {
     // border: 1px solid red;
@@ -16,5 +24,9 @@
     justify-content: space-between;
     flex-wrap: wrap;
     gap: 1rem;
+
+    @include lg {
+      justify-content: end;
+    }
   }
 }

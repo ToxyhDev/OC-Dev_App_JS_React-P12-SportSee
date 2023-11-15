@@ -90,6 +90,23 @@ export default function ChartSessions({ userId }: ChartSessionsProps) {
                 sessions
               </tspan>
             </text>
+            <defs>
+              <linearGradient
+                id="gradientLine"
+                x1="309.906"
+                y1="-1.97779"
+                x2="-47.7754"
+                y2="-1.97779"
+                gradientUnits="userSpaceOnUse"
+              >
+                <stop stopColor="white" />
+                <stop
+                  offset="0.810441"
+                  stopColor="white"
+                  stopOpacity="0.403191"
+                />
+              </linearGradient>
+            </defs>
             <XAxis
               dataKey="dayOfWeek"
               axisLine={false}
@@ -122,7 +139,7 @@ export default function ChartSessions({ userId }: ChartSessionsProps) {
             <Line
               type="monotone"
               dataKey="sessionLength"
-              stroke="rgba(255, 255, 255, 0.7)"
+              stroke="url(#gradientLine)"
               strokeWidth={2}
               dot={false}
               activeDot={{

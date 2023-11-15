@@ -21,6 +21,9 @@
 .fontSize-paragraph {
   font-family: $fontFamily;
   font-size: $fontSize-paragraph;
+  @include xl {
+    font-size: 16px;
+  }
   @include sm {
     font-size: $fontSize-paragraph-sm;
   }
@@ -37,6 +40,9 @@
 .fontSize-paragraph3 {
   font-family: $fontFamily;
   font-size: $fontSize-paragraph3;
+  @include xl {
+    font-size: 12px;
+  }
   @include sm {
     font-size: $fontSize-paragraph3-sm;
   }

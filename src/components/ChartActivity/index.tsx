@@ -58,8 +58,8 @@ export default function ChartActivity({ userId }: ChartActivityProps) {
         <div
           style={{ backgroundColor: '#E60000', color: '#fff', padding: '8px' }}
         >
-          <p className="label">{`${payload[0].value} ${payload[0].unit}`}</p>
-          <p className="label">{`${payload[1].value} ${payload[1].unit}`}</p>
+          <p>{`${payload[0].value} ${payload[0].unit}`}</p>
+          <p>{`${payload[1].value} ${payload[1].unit}`}</p>
         </div>
       )
     }
@@ -73,12 +73,12 @@ export default function ChartActivity({ userId }: ChartActivityProps) {
         <h3 className="chartActivity__title">Activité quotidienne</h3>
         <ResponsiveContainer width="100%" height="100%">
           <BarChart
-            margin={{
-              top: 24,
-              right: 32,
-              left: 32,
-              bottom: 24,
-            }}
+            // margin={{
+            //   top: 24,
+            //   right: 32,
+            //   left: 32,
+            //   bottom: 24,
+            // }}
             data={userData.sessions}
             barSize={8}
           >
@@ -88,19 +88,25 @@ export default function ChartActivity({ userId }: ChartActivityProps) {
               tickLine={false}
               tick={{ fill: '#9B9EAC', fontSize: 14, fontWeight: 500 }}
             />
+
             <YAxis
+              yAxisId={0}
               orientation="right"
               axisLine={false}
+              stroke="#9B9EAC"
+              dataKey="kilogram"
               tickLine={false}
-              tickSize={20}
+              domain={['dataMin -1', 'dataMax +2']}
+              tickMargin={20}
+            />
+            <YAxis
+              hide={true}
+              yAxisId={1}
+              orientation="left"
+              dataKey="calories"
+              domain={['dataMin - 100', 'dataMax +10']}
             />
             <Tooltip
-              contentStyle={{
-                backgroundColor: '#E60000',
-              }}
-              itemStyle={{
-                color: 'white',
-              }}
               labelStyle={{ display: 'none' }}
               // formatter={(value, _name, unit) => [value, unit]}
               content={<CustomTooltip />}
@@ -113,18 +119,21 @@ export default function ChartActivity({ userId }: ChartActivityProps) {
               wrapperStyle={{ paddingBottom: '40px' }}
               formatter={renderLegend}
             />
+
             <Bar
               unit="Kg"
+              yAxisId={0}
               name="Poids (kg)"
               dataKey="kilogram"
-              fill="#282D30"
+              fill="#282d30"
               radius={[5, 5, 0, 0]}
             />
             <Bar
               unit="kCal"
-              name="Calories brûlées (kCal)"
+              yAxisId={1}
+              name="Calories brûlées(kCal)"
               dataKey="calories"
-              fill="#e60000"
+              fill="#e60001"
               radius={[5, 5, 0, 0]}
             />
           </BarChart>

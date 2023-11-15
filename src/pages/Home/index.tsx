@@ -25,8 +25,7 @@ export default function Home() {
             </p>
             <ul className="home__list">
               {userData.map((element: Post, index: number) => (
-                <li key={index} className="homme__element fontSize-paragraph">
-                  {'➡️ '}
+                <li key={index} className="home__element fontSize-paragraph">
                   <Link to={`/user/${element.id}`}>
                     {`${element.userInfos.firstName} ${element.userInfos.lastName}`}
                   </Link>

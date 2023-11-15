@@ -49,7 +49,7 @@ export default function ChartPerformance({ userId }: ChartPerformanceProps) {
     <>
       <div className="chartPerformance">
         <ResponsiveContainer width="100%" height="100%">
-          <RadarChart cx="50%" cy="50%" outerRadius="80%" data={data}>
+          <RadarChart cx="50%" cy="50%" outerRadius="60%" data={data}>
             <PolarGrid radialLines={false} stroke="#fff" />
             <PolarAngleAxis
               dataKey="kind"

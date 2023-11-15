@@ -43,20 +43,20 @@ export default function ChartScore({ score }: ChartScoreProps) {
           <RadialBarChart
             cx="50%"
             cy="50%"
-            innerRadius="100%" //60
+            innerRadius="60%" //60
             barSize={10}
             data={data}
             startAngle={90}
             endAngle={450}
-            margin={{
-              top: 24,
-              right: 24,
-              left: 24,
-              bottom: 24,
-            }}
+            // margin={{
+            //   top: 24,
+            //   right: 24,
+            //   left: 24,
+            //   bottom: 24,
+            // }}
           >
             {/* r='80' */}
-            <circle r="95" cx="50%" cy="50%" fill="white" />
+            <circle r="85" cx="50%" cy="50%" fill="white" />
             <PolarAngleAxis type="number" domain={[0, 100]} tick={false} />
             <RadialBar dataKey="value" cornerRadius={30} />
             <text
