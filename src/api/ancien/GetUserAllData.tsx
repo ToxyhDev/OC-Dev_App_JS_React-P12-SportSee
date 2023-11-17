@@ -1,10 +1,11 @@
 import axios from 'axios'
 import { useEffect, useState } from 'react'
-import { USER_MAIN_DATA as mockData } from '../utils/mocks/mockData'
-import { apiDisconnected } from './GetUserAllData'
+import { USER_MAIN_DATA as mockData } from '../../utils/mocks/mockData'
+
+export const apiDisconnected = true
 
 interface DataPost {
-  data: Post
+  data: Post[]
 }
 export interface Post {
   id: number
@@ -16,27 +17,26 @@ export interface Post {
     lipidCount: number
   }
   todayScore: number
-  score: number
   userInfos: {
     firstName: string
     lastName: string
     age: number
   }
 }
+
 /**
- *
- * @param {number} userId
- * @returns {Post | string}  Data corresponds to the user ID
+ * Post[] if data load else return loading message
+ * @returns {Post[] | string}
  */
-export default function GetUserMainData(userId: string): Post | string {
-  const baseURL = `http://localhost:3000/user/${userId}`
+
+export default function GetUserAllData(): Post[] | string {
+  const baseURL = `http://localhost:3000/users`
 
   const [post, setPost] = useState<DataPost | null>(null)
 
   useEffect(() => {
     if (apiDisconnected) {
-      const userData = mockData.filter((data) => data.id === Number(userId))
-      setPost({ data: userData[0] } as DataPost)
+      setPost({ data: mockData } as DataPost)
     } else {
       axios
         .get(baseURL)
@@ -47,7 +47,9 @@ export default function GetUserMainData(userId: string): Post | string {
           console.error(err)
         })
     }
-  }, [baseURL, userId])
+  }, [baseURL])
+
+  console.log(post)
 
   if (!post) {
     return 'Chargement en cours'

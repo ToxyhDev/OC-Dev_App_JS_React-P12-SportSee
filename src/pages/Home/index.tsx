@@ -1,6 +1,6 @@
 import './index.scss'
-import GetUserAllData from '../../api/GetUserAllData'
-import { Post } from '../../api/GetUserAllData'
+import GetUserAllData from '../../api/ancien/GetUserAllData'
+import { Post } from '../../api/ancien/GetUserAllData'
 import { Link } from 'react-router-dom'
 
 export default function Home() {

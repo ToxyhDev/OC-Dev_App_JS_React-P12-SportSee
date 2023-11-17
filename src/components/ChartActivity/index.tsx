@@ -1,6 +1,8 @@
 import './index.scss'
-import GetUserActivity from '../../api/GetUserActivity'
-import { Post } from '../../api/GetUserActivity'
+// import GetUserActivity from '../../api/GetUserActivity'
+import { UserActivity } from '../../api/api.interface'
+import apiInstance from '../../api/api'
+// import { Post } from '../../api/GetUserActivity'
 import {
   BarChart,
   Bar,
@@ -26,8 +28,8 @@ interface Payload {
 }
 
 export default function ChartActivity({ userId }: ChartActivityProps) {
-  const userData: Post | string = userId
-    ? GetUserActivity(userId)
+  const userData: UserActivity | string = userId
+    ? apiInstance.getUserActivityData(Number(userId))
     : 'Chargement...'
 
   // --> Handle the case where userData is a string

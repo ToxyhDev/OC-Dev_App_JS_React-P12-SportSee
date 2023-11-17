@@ -1,6 +1,8 @@
 import './index.scss'
-import GetUserSessions from '../../api/GetUserSessions'
-import { Post } from '../../api/GetUserSessions'
+// import GetUserSessions from '../../api/GetUserSessions'
+import { UserAverageSessions } from '../../api/api.interface'
+import apiInstance from '../../api/api'
+// import { Post } from '../../api/GetUserSessions'
 import {
   LineChart,
   Line,
@@ -24,8 +26,8 @@ interface CustomCursorProps {
 
 export default function ChartSessions({ userId }: ChartSessionsProps) {
   // export default function ChartActivity({ userId }) {
-  const userData: Post | string = userId
-    ? GetUserSessions(userId)
+  const userData: UserAverageSessions | string = userId
+    ? apiInstance.getUserSessionsData(Number(userId))
     : 'Chargement...'
 
   // --> Handle the case where userData is a string

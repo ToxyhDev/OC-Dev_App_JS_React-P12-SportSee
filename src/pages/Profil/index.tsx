@@ -1,7 +1,9 @@
 import './index.scss'
 import { useParams } from 'react-router-dom'
-import GetUserMainData from '../../api/GetUserMainData'
-import { Post } from '../../api/GetUserMainData'
+// import GetUserMainData from '../../api/GetUserMainData'
+import apiInstance from '../../api/api'
+import { UserMainData } from '../../api/api.interface'
+// import { Post } from '../../api/GetUserMainData'
 import NavigationSecond from '../../components/NavigationSecond'
 import ChartActivity from '../../components/ChartActivity'
 import IconCalories from '../../assets/calories-icon.svg?react'
@@ -14,8 +16,11 @@ import ChartScore from '../../components/ChartScore'
 
 export default function Profil() {
   const { id } = useParams<string>()
-  const userData: Post | string = id ? GetUserMainData(id) : 'Chargement...'
+  const userData: UserMainData | string = id
+    ? apiInstance.getUserData(Number(id))
+    : 'Chargement...'
 
+  console.log(userData)
   return (
     <>
       {typeof userData === 'string' ? (

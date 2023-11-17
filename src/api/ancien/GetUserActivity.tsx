@@ -1,6 +1,6 @@
 import axios from 'axios'
 import { useEffect, useState } from 'react'
-import { USER_ACTIVITY as mockData } from '../utils/mocks/mockData'
+import { USER_ACTIVITY as mockData } from '../../utils/mocks/mockData'
 import { apiDisconnected } from './GetUserAllData'
 
 interface DataPost {

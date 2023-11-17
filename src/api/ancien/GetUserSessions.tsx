@@ -1,6 +1,6 @@
 import axios from 'axios'
 import { useEffect, useState } from 'react'
-import { USER_PERFORMANCE as mockData } from '../utils/mocks/mockData'
+import { USER_AVERAGE_SESSIONS as mockData } from '../../utils/mocks/mockData'
 import { apiDisconnected } from './GetUserAllData'
 
 interface DataPost {
@@ -8,27 +8,19 @@ interface DataPost {
 }
 export interface Post {
   userId: number
-  kind: {
-    1: string
-    2: string
-    3: string
-    4: string
-    5: string
-    6: string
-  }
-  data: Sessions[]
+  sessions: Sessions[]
 }
 interface Sessions {
-  value: number
-  kind: number
+  day: number
+  sessionLength: number
 }
 /**
  *
  * @param {number} userId
  * @returns {Post | string}  Data corresponds to the user ID
  */
-export default function GetUserPerformance(userId: string): Post | string {
-  const baseURL = `http://localhost:3000/user/${userId}/performance`
+export default function GetUserSessions(userId: string): Post | string {
+  const baseURL = `http://localhost:3000/user/${userId}/average-sessions`
 
   const [post, setPost] = useState<DataPost | null>(null)
 

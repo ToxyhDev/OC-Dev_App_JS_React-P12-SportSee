@@ -1,6 +1,8 @@
 import './index.scss'
-import GetUserPerformance from '../../api/GetUserPerformance'
-import { Post } from '../../api/GetUserPerformance'
+// import GetUserPerformance from '../../api/GetUserPerformance'
+import { UserPerformance, PerformanceData } from '../../api/api.interface'
+import apiInstance from '../../api/api'
+// import { Post } from '../../api/GetUserPerformance'
 import {
   Radar,
   RadarChart,
@@ -12,16 +14,12 @@ import {
 interface ChartPerformanceProps {
   userId?: string
 }
-interface IData {
-  kind: string
-  value: number
-}
 
 export default function ChartPerformance({ userId }: ChartPerformanceProps) {
-  const userData: Post | string = userId
-    ? GetUserPerformance(userId)
+  const userData: UserPerformance | string = userId
+    ? apiInstance.getUserPerformanceData(Number(userId))
     : 'Chargement...'
-
+  console.log(userData)
   // --> Handle the case where userData is a string
   if (typeof userData === 'string') {
     return <div>{userData}</div>
@@ -38,8 +36,8 @@ export default function ChartPerformance({ userId }: ChartPerformanceProps) {
     'Intensité',
   ]
   // -> Formatting data for chart
-  const data: IData[] = userData.data.map((element) => ({
-    kind: listKind[element.kind - 1],
+  const data: PerformanceData[] = userData.data.map((element) => ({
+    kind: listKind[Number(element.kind) - 1],
     value: element.value,
   }))
 
