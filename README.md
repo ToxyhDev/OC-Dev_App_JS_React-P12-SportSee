@@ -31,12 +31,15 @@ You can fork the Back-End part with the REST API on this [github repository](htt
 
 > [!NOTE]  
 > It is not mandatory to use the API to run this project. A mock of the data is available.
->
-> ```js
-> // src/api/GetUserAllData.tsx
-> export const apiDisconnected = true //mock used
-> export const apiDisconnected = false //mock not used
-> ```
+
+```dosini
+# .env
+
+# Enable API
+VITE_USE_API=true
+ # Disable API
+VITE_USE_API=false
+```
 
 ### 2. Starting the project
 
@@ -101,7 +104,6 @@ If you are developing a production application, we recommend updating the config
 
 This project includes four endpoints that you will be able to use:
 
-- 🆕 `http://localhost:3000/users` - retrieves all users
 - `http://localhost:3000/user/${userId}` - retrieves information from a user. This first endpoint includes the user id, user information (first name, last name and age), the current day's score (todayScore) and key data (calorie, macronutrient, etc.).
 - `http://localhost:3000/user/${userId}/activity` - retrieves a user's activity day by day with kilograms and calories.
 - `http://localhost:3000/user/${userId}/average-sessions` - retrieves the average sessions of a user per day. The week starts on Monday.
