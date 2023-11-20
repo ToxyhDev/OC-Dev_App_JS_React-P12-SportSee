@@ -7,12 +7,12 @@ export default function Navigation() {
       <nav className="nav-main">
         <ul className="nav-main__list">
           <li className="nav-main__element">
-            <Link to="/" className={'fontSize-subtitle'}>
+            <Link to="/home" className={'fontSize-subtitle'}>
               Accueil
             </Link>
           </li>
           <li className="nav-main__element">
-            <Link to="#" className={'fontSize-subtitle'}>
+            <Link to="/user/12" className={'fontSize-subtitle'}>
               Profil
             </Link>
           </li>

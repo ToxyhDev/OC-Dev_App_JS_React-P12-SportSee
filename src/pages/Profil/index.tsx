@@ -20,7 +20,7 @@ export default function Profil() {
     ? apiInstance.getUserData(Number(id))
     : 'Chargement...'
 
-  console.log(userData)
+  // console.log(userData)
   return (
     <>
       {typeof userData === 'string' ? (

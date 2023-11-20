@@ -65,3 +65,9 @@ export interface Api {
   getUserSessionsData(userId: number): UserAverageSessions | string
   getUserPerformanceData(userId: number): UserPerformance | string
 }
+export interface MockApi {
+  getUserMainDataById(userId: number): UserMainData
+  getUserActivityById(userId: number): UserActivity
+  getUserSessionsById(userId: number): UserAverageSessions
+  getUserPerformanceById(userId: number): UserPerformance
+}

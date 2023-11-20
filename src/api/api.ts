@@ -5,12 +5,11 @@ import {
   UserPerformance,
   Api,
 } from './api.interface'
-// import dataApiInstance from './dataApi'
 import {
   GetUserMainDataById,
-  getUserActivityById,
-  getUserSessionsById,
-  getUserPerformanceById,
+  GetUserActivityById,
+  GetUserSessionsById,
+  GetUserPerformanceById,
 } from './dataApi'
 import mockApiInstance from './mockApi'
 
@@ -23,13 +22,8 @@ class ApiImpl implements Api {
 
   getUserData(userId: number): UserMainData | string {
     if (this.useApi) {
-      try {
-        const mainData = GetUserMainDataById(userId)
-        // console.log(mainData.data)
-        return mainData
-      } catch (error) {
-        return 'Erreur lors de la récupération des données utilisateur.'
-      }
+      const mainData = GetUserMainDataById(userId)
+      return mainData
     } else {
       const userData = mockApiInstance.getUserMainDataById(userId)
       return userData || 'Utilisateur non trouvé.'
@@ -38,12 +32,8 @@ class ApiImpl implements Api {
 
   getUserActivityData(userId: number): UserActivity | string {
     if (this.useApi) {
-      try {
-        const mainData = getUserActivityById(userId)
-        return mainData
-      } catch (error) {
-        return 'Erreur lors de la récupération des données utilisateur.'
-      }
+      const mainData = GetUserActivityById(userId)
+      return mainData
     } else {
       const userData = mockApiInstance.getUserActivityById(userId)
       return userData || 'Utilisateur non trouvé.'
@@ -52,12 +42,8 @@ class ApiImpl implements Api {
 
   getUserSessionsData(userId: number): UserAverageSessions | string {
     if (this.useApi) {
-      try {
-        const mainData = getUserSessionsById(userId)
-        return mainData
-      } catch (error) {
-        return 'Erreur lors de la récupération des données utilisateur.'
-      }
+      const mainData = GetUserSessionsById(userId)
+      return mainData
     } else {
       const userData = mockApiInstance.getUserSessionsById(userId)
       return userData || 'Utilisateur non trouvé.'
@@ -66,19 +52,15 @@ class ApiImpl implements Api {
 
   getUserPerformanceData(userId: number): UserPerformance | string {
     if (this.useApi) {
-      try {
-        const mainData = getUserPerformanceById(userId)
-        return mainData
-      } catch (error) {
-        return 'Erreur lors de la récupération des données utilisateur.'
-      }
+      const mainData = GetUserPerformanceById(userId)
+      return mainData
     } else {
       const userData = mockApiInstance.getUserPerformanceById(userId)
       return userData || 'Utilisateur non trouvé.'
     }
   }
 }
-const apiUsing = false
+const apiUsing = import.meta.env.VITE_USE_API
 const apiInstance = new ApiImpl(apiUsing)
 
 export default apiInstance

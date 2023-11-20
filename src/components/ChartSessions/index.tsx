@@ -35,22 +35,13 @@ export default function ChartSessions({ userId }: ChartSessionsProps) {
     return <div>{userData}</div>
   }
 
-  // ==> Data loaded
-
-  // -> Map data to get days of the week
-  const week = ['L', 'M', 'M', 'J', 'V', 'S', 'D']
-  const dataWithDaysOfWeek = userData.sessions.map((session) => ({
-    ...session,
-    dayOfWeek: week[session.day - 1],
-  }))
-
   // => continuous line design
   // -> Dummy point on the left
   const leftPoint = { day: 0, sessionLength: 30 }
   // -> Dummy point on the right
   const rightPoint = { day: 8, sessionLength: 70 }
 
-  const extendedSessions = [leftPoint, ...dataWithDaysOfWeek, rightPoint]
+  const extendedSessions = [leftPoint, ...userData.sessions, rightPoint]
 
   // => Custom cursor during the chart hover
   function CustomCursor({ points }: CustomCursorProps) {

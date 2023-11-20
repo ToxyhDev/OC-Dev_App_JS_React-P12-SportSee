@@ -6,7 +6,7 @@ interface ApiResponse<T> {
 }
 
 export function useFetch<T>(url: string) {
-  const [data, setData] = useState<T | undefined>(undefined)
+  const [data, setData] = useState<T | string>('Chargement')
   const [isLoading, setLoading] = useState(true)
   const [error, setError] = useState<null | boolean>(null)
 
@@ -14,7 +14,6 @@ export function useFetch<T>(url: string) {
     async function fetchData() {
       try {
         const res: AxiosResponse<ApiResponse<T>> = await axios.get(url)
-        console.log(res.data.data)
         setData(res.data.data)
       } catch (err) {
         console.error(err)

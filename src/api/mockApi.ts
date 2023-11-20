@@ -11,14 +11,8 @@ import {
   UserActivity,
   UserAverageSessions,
   UserPerformance,
+  MockApi,
 } from './api.interface'
-
-interface MockApi {
-  getUserMainDataById(userId: number): UserMainData
-  getUserActivityById(userId: number): UserActivity
-  getUserSessionsById(userId: number): UserAverageSessions
-  getUserPerformanceById(userId: number): UserPerformance
-}
 
 class MockApiImpl implements MockApi {
   getUserMainDataById(userId: number): UserMainData {

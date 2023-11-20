@@ -1,64 +1,76 @@
-// const response = await axios.get<UserMainData>(
-//   `${API_BASE_URL}/user/${userId}`
-// )
-// return response.data
-
-import axios from 'axios'
 import {
   UserMainData,
   UserActivity,
   UserAverageSessions,
   UserPerformance,
+  PerformanceData,
 } from './api.interface'
 import { useFetch } from '../utils/hooks/fetch'
 
-const API_BASE_URL = 'http://localhost:3000'
+const API_BASE_URL = `${import.meta.env.VITE_API_URL}`
 
-// interface DataApi {
-//   getUserMainDataById(userId: number): Promise<UserMainData>
-//   getUserActivityById(userId: number): Promise<UserActivity>
-//   getUserSessionsById(userId: number): Promise<UserAverageSessions>
-//   getUserPerformanceById(userId: number): Promise<UserPerformance>
-// }
-// Dans ce fichier redigier dans un fichier tsx pour useFetch et utiliser axios
-// class DataApiImpl implements DataApi {
-export function GetUserMainDataById(userId: number): UserMainData {
+export function GetUserMainDataById(userId: number): UserMainData | string {
   const response = useFetch<UserMainData>(`${API_BASE_URL}/user/${userId}`)
-  console.log(response)
-  // console.log(response.error)
-  console.log(response.data)
-  // const response = { data, isLoading, error }
+
+  if (response.error === true)
+    return 'Erreur lors de la récupération des données utilisateur.'
   return response.data
 }
 
-export async function getUserActivityById(
-  userId: number
-): Promise<UserActivity> {
-  const response = await axios.get<UserActivity>(
+export function GetUserActivityById(userId: number): UserActivity | string {
+  const response = useFetch<UserActivity>(
     `${API_BASE_URL}/user/${userId}/activity`
   )
+  if (response.error === true)
+    return 'Erreur lors de la récupération des données utilisateur.'
   return response.data
 }
 
-export async function getUserSessionsById(
+export function GetUserSessionsById(
   userId: number
-): Promise<UserAverageSessions> {
-  const response = await axios.get<UserAverageSessions>(
+): UserAverageSessions | string {
+  const response = useFetch<UserAverageSessions>(
     `${API_BASE_URL}/user/${userId}/average-sessions`
   )
+  if (response.error === true)
+    return 'Erreur lors de la récupération des données utilisateur.'
+
+  if (typeof response.data === 'string') return response.data
+
+  const week = ['L', 'M', 'M', 'J', 'V', 'S', 'D']
+  response.data.sessions = response.data.sessions.map((session) => ({
+    ...session,
+    dayOfWeek: week[session.day - 1],
+  }))
+
   return response.data
 }
 
-export async function getUserPerformanceById(
+export function GetUserPerformanceById(
   userId: number
-): Promise<UserPerformance> {
-  const response = await axios.get<UserPerformance>(
+): UserPerformance | string {
+  const response = useFetch<UserPerformance>(
     `${API_BASE_URL}/user/${userId}/performance`
   )
-  return response.data
+  if (response.error === true)
+    return 'Erreur lors de la récupération des données utilisateur.'
+
+  if (typeof response.data === 'string') return response.data
+
+  // -> Formatting data for chart
+  const listKind: string[] = [
+    'Cardio',
+    'Énergie',
+    'Endurance',
+    'Force',
+    'Vitesse',
+    'Intensité',
+  ]
+  const formatingData: PerformanceData[] = response.data.data.map(
+    (element) => ({
+      kind: listKind[Number(element.kind) - 1],
+      value: element.value,
+    })
+  )
+  return { ...response.data, data: formatingData }
 }
-// }
-
-// const dataApiInstance = new DataApiImpl()
-
-// export default dataApiInstance
