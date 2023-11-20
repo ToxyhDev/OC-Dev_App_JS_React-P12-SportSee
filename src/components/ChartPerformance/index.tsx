@@ -1,8 +1,6 @@
 import './index.scss'
-// import GetUserPerformance from '../../api/GetUserPerformance'
 import { UserPerformance } from '../../api/api.interface'
 import apiInstance from '../../api/api'
-// import { Post } from '../../api/GetUserPerformance'
 import {
   Radar,
   RadarChart,

@@ -1,9 +1,7 @@
 import './index.scss'
 import { useParams } from 'react-router-dom'
-// import GetUserMainData from '../../api/GetUserMainData'
 import apiInstance from '../../api/api'
 import { UserMainData } from '../../api/api.interface'
-// import { Post } from '../../api/GetUserMainData'
 import NavigationSecond from '../../components/NavigationSecond'
 import ChartActivity from '../../components/ChartActivity'
 import IconCalories from '../../assets/calories-icon.svg?react'
@@ -13,6 +11,7 @@ import IconFat from '../../assets/fat-icon.svg?react'
 import ChartSessions from '../../components/ChartSessions'
 import ChartPerformance from '../../components/ChartPerformance'
 import ChartScore from '../../components/ChartScore'
+import Indicator from '../../components/Indicator'
 
 export default function Profil() {
   const { id } = useParams<string>()
@@ -58,37 +57,22 @@ export default function Profil() {
                   </ul>
                 </div>
                 <ul className="profil__indicators">
-                  <li className="profil__indicator">
-                    <IconCalories />
-                    <p className="profil__indicator--p fontSize-paragraph3">
-                      <span className="profil__indicator--span fontSize-paragraph">{`${userData.keyData.calorieCount}kcal`}</span>{' '}
-                      <br /> Calories
-                    </p>
-                  </li>
-                  <li className="profil__indicator">
-                    <IconProtein />
-                    <p className="profil__indicator--p fontSize-paragraph3">
-                      <span className="profil__indicator--span fontSize-paragraph">{`${userData.keyData.proteinCount}g`}</span>{' '}
-                      <br />
-                      Proteines
-                    </p>
-                  </li>
-                  <li className="profil__indicator">
-                    <IconCarbs />
-                    <p className="profil__indicator--p fontSize-paragraph3">
-                      <span className="profil__indicator--span fontSize-paragraph">{`${userData.keyData.carbohydrateCount}g`}</span>{' '}
-                      <br />
-                      Glucides
-                    </p>
-                  </li>
-                  <li className="profil__indicator">
-                    <IconFat />
-                    <p className="profil__indicator--p fontSize-paragraph3">
-                      <span className="profil__indicator--span fontSize-paragraph">{`${userData.keyData.lipidCount}g`}</span>{' '}
-                      <br />
-                      Lipides
-                    </p>
-                  </li>
+                  <Indicator icon={<IconCalories />}>
+                    <span className="profil__indicator--span fontSize-paragraph">{`${userData.keyData.calorieCount}kcal`}</span>{' '}
+                    <br /> Calories
+                  </Indicator>
+                  <Indicator icon={<IconProtein />}>
+                    <span className="profil__indicator--span fontSize-paragraph">{`${userData.keyData.proteinCount}g`}</span>{' '}
+                    <br /> Proteines
+                  </Indicator>
+                  <Indicator icon={<IconCarbs />}>
+                    <span className="profil__indicator--span fontSize-paragraph">{`${userData.keyData.carbohydrateCount}g`}</span>{' '}
+                    <br /> Glucides
+                  </Indicator>
+                  <Indicator icon={<IconFat />}>
+                    <span className="profil__indicator--span fontSize-paragraph">{`${userData.keyData.lipidCount}g`}</span>{' '}
+                    <br /> Lipides
+                  </Indicator>
                 </ul>
               </div>
             </article>

@@ -1,8 +1,6 @@
 import './index.scss'
-// import GetUserActivity from '../../api/GetUserActivity'
 import { UserActivity } from '../../api/api.interface'
 import apiInstance from '../../api/api'
-// import { Post } from '../../api/GetUserActivity'
 import {
   BarChart,
   Bar,

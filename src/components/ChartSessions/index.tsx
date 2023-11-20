@@ -1,8 +1,6 @@
 import './index.scss'
-// import GetUserSessions from '../../api/GetUserSessions'
 import { UserAverageSessions } from '../../api/api.interface'
 import apiInstance from '../../api/api'
-// import { Post } from '../../api/GetUserSessions'
 import {
   LineChart,
   Line,

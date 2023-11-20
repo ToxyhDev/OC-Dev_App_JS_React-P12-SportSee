@@ -18,7 +18,7 @@ export interface KeyData {
   carbohydrateCount: number
   lipidCount: number
 }
-// ----------------------------------------------
+//----------------------------------------------
 
 export interface UserActivity {
   userId: number
@@ -29,7 +29,7 @@ export interface Session {
   kilogram: number
   calories: number
 }
-//---------------------------
+//----------------------------------------------
 
 export interface UserAverageSessions {
   userId: number
@@ -39,7 +39,7 @@ export interface AverageSession {
   day: number
   sessionLength: number
 }
-//------------------------------------------
+//----------------------------------------------
 export interface UserPerformance {
   userId: number
   kind: {
@@ -57,7 +57,7 @@ export interface PerformanceData {
   kind: number | string
 }
 
-// ------------------------------
+//----------------------------------------------
 
 export interface Api {
   getUserData(userId: number): UserMainData | string
