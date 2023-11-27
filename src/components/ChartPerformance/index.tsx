@@ -23,22 +23,20 @@ export default function ChartPerformance({ userId }: ChartPerformanceProps) {
   }
 
   return (
-    <>
-      <div className="chartPerformance">
-        <ResponsiveContainer width="100%" height="100%">
-          <RadarChart cx="50%" cy="50%" outerRadius="60%" data={userData.data}>
-            <PolarGrid radialLines={false} stroke="#fff" />
-            <PolarAngleAxis
-              dataKey="kind"
-              tickLine={false}
-              axisLine={false}
-              stroke="#fff"
-              fontSize={'12px'}
-            />
-            <Radar dataKey="value" fill="#f00" fillOpacity={0.7} />
-          </RadarChart>
-        </ResponsiveContainer>
-      </div>
-    </>
+    <div className="chartPerformance">
+      <ResponsiveContainer width="100%" height="100%">
+        <RadarChart cx="50%" cy="50%" outerRadius="60%" data={userData.data}>
+          <PolarGrid radialLines={false} stroke="#fff" />
+          <PolarAngleAxis
+            dataKey="kind"
+            tickLine={false}
+            axisLine={false}
+            stroke="#fff"
+            fontSize={'12px'}
+          />
+          <Radar dataKey="value" fill="#f00" fillOpacity={0.7} />
+        </RadarChart>
+      </ResponsiveContainer>
+    </div>
   )
 }
