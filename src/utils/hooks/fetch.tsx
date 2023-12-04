@@ -7,7 +7,7 @@ interface ApiResponse<T> {
 
 export function useFetch<T>(url: string) {
   const [data, setData] = useState<T | string>('Chargement')
-  const [isLoading, setLoading] = useState(true)
+  const [isLoading, setIsLoading] = useState(true)
   const [error, setError] = useState<null | boolean>(null)
 
   useEffect(() => {
@@ -19,14 +19,14 @@ export function useFetch<T>(url: string) {
         console.error(err)
         setError(true)
       } finally {
-        setLoading(false)
+        setIsLoading(false)
       }
     }
 
     if (url) {
       fetchData().catch((err) => console.error(err))
     } else {
-      setLoading(true)
+      setIsLoading(true)
     }
   }, [url])
 
